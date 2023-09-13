@@ -1,0 +1,10 @@
+{
+    "apps" : [{
+        "name"        : "workdetaillink",
+        "script"      : "./workdetaillink.js"
+    },{
+        "name"       : "bulldetaillink",
+        "script"     : "./bulldetaillink.js",
+        "cron_restart":"*/3 * * * *"
+    }]
+}

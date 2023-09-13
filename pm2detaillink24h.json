@@ -1,0 +1,10 @@
+{
+    "apps" : [{
+        "name"        : "workdetaillink24h",
+        "script"      : "./workdetaillink24h.js"
+    },{
+        "name"       : "bulldetaillink24",
+        "script"     : "./bulldetaillink24h.js"
+     
+    }]
+}

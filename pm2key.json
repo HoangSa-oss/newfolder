@@ -1,0 +1,10 @@
+{
+    "apps" : [{
+        "name"        : "workkey",
+        "script"      : "./workkey.js"
+    },{
+        "name"       : "bullkey",
+        "script"     : "./bullkey.js"
+       
+    }]
+}
