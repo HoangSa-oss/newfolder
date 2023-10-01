@@ -17,7 +17,9 @@
     "bulldetaillink24h": "babel-node bulldetaillink24h.js",
     "workhastag": "babel-node workhastag.js",
     "bullhastag": "babel-node bullhastag.js",
-    "getcookie": "babel-node getcookie.js"
+    "getcookie": "babel-node getcookie.js",
+    "workkey1": "babel-node workkey1.js",
+    "bullkey1": "babel-node bullkey1.js"
   },
   "keywords": [],
   "author": "",

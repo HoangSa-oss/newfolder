@@ -8,5 +8,7 @@ const profileSchema = new Schema({
     keyword:String,
     urlPost:String,
     date:String,
+    idPost:String
+    
 }, { versionKey: false })
-export default model('1keyworddaily',profileSchema);
+export default model('keywordmoi',profileSchema);

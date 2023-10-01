@@ -14,7 +14,7 @@ export const  tiktokProfile = async(indexCookie)=>{
     const queueHasTag = new Queue('queueHasTag','redis://127.0.0.1:6379')
 
     var ordinalCookie = 0
-    const date = '2022-12-01'
+    const date = '2023-08-01'
     const dateTimeStamp = moment(date).format('X')
     const timewait =500
     const getEnd=20000

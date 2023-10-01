@@ -12,31 +12,7 @@ const queueHasTag = new Queue('queueHasTag','redis://127.0.0.1:6379')
 //         console.log({hashtag:`${urlVdideo[i].hashtag}`})
 // } 
 const urlVdideo = [
-        "#dulich",
-        "#travel",
-        "#tour",
-        "#checkin",
-        "#phuot",
-        "#khudulich",
-        "#dulichmienbac",
-        "#dulichmiennam",
-        "#dulichmientay",
-        "#dulichmientrung",
-        "#dulichchaua",
-        "#dulichchauau",
-        "#Tet",
-        "#Tet2023",
-        "#Tetnguyendan",
-        "#chucmungnammoi",
-        "#dulichTet",
-        "#dulichTet2023",
-        "#phuotTet2023",
-        "#phuotTet",
-        "#tourTet",
-        "#tourTet2023",
-        "#duxuan",
-        "#duxuan2023",
-
+       
 ]
 for(let i=0;i<urlVdideo.length;i++){
   

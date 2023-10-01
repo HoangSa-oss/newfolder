@@ -1,27 +1,26 @@
 import puppeteer from 'puppeteer-extra';
-import workkeyfunction from './workkeyfunction.js';
+import workkeyfunction from './workkeyfunction1.js';
 import domtiktokkey from './dom/domtiktokkey.json' assert { type: 'json' }
 import Queue from 'bull';
 import moment from 'moment';
 import cookie from './cookiedefault.json' assert { type: 'json' }
-import schemaurlpost from './models/schemaurlpost.js';
+import schemaurlpost from './models/schemaurlpost1.js';
 import delay from 'delay';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import  {executablePath} from 'puppeteer'
 import fs from 'fs/promises'
 
-const queueKeyWordApi1 = new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
-const queueKeyWordApi2 = new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
-const queueKeyWordApi3 = new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
-const queueKeyWordApi4 = new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
-const queueKeyWordApi5 = new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
-const queueKeyWordApi6 = new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
-const queueKeyWordApi7 = new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
-const queueKeyWordApi8 = new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
-const queueKeyWordApi9 = new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
-const queueKeyWordApi10 = new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
-const queueKeyWordApi11 = new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
-const queueKeyWordApi12= new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
+const queueKeyWordApi1 = new Queue('queueKeyWordApi1','redis://127.0.0.1:6379')
+const queueKeyWordApi2 = new Queue('queueKeyWordApi1','redis://127.0.0.1:6379')
+const queueKeyWordApi3 = new Queue('queueKeyWordApi1','redis://127.0.0.1:6379')
+const queueKeyWordApi4 = new Queue('queueKeyWordApi1','redis://127.0.0.1:6379')
+const queueKeyWordApi5 = new Queue('queueKeyWordApi1','redis://127.0.0.1:6379')
+const queueKeyWordApi6 = new Queue('queueKeyWordApi1','redis://127.0.0.1:6379')
+const queueKeyWordApi7 = new Queue('queueKeyWordApi1','redis://127.0.0.1:6379')
+const queueKeyWordApi8 = new Queue('queueKeyWordApi1','redis://127.0.0.1:6379')
+const queueKeyWordApi9 = new Queue('queueKeyWordApi1','redis://127.0.0.1:6379')
+const queueKeyWordApi10 = new Queue('queueKeyWordApi1','redis://127.0.0.1:6379')
+const queueKeyWordApi11 = new Queue('queueKeyWordApi1','redis://127.0.0.1:6379')
 
 puppeteer.use(StealthPlugin());
 
@@ -30,7 +29,7 @@ const  tiktokProfile = async()=>{
     process.setMaxListeners(0)
     const sumQueued = 5
     let arrayCookieDelete = []
-    const date = '2023-09-27'
+    const date = '2023-09-01'
     const dateTimeStamp = moment(date).format('X')
     console.log(dateTimeStamp)
     let indexCookie = 0 
@@ -204,40 +203,6 @@ const  tiktokProfile = async()=>{
           executablePath:executablePath()
     
     });
-    const browser11 = await puppeteer.launch({
-        headless: false,
-        // userDataDir: 'C:/Users/Sa/AppData/Local/Google/Chrome/User Data/Profile 11',
-    
-        args: [
-            '--enable-features=NetworkService',
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--disable-web-security',
-            '--disable-features=IsolateOrigins,site-per-process',
-            '--shm-size=3gb', // this solves the issue
-          ],
-          ignoreHTTPSErrors: true,
-          executablePath:executablePath()
-    
-    });
-    const browser12 = await puppeteer.launch({
-        headless: false,
-        // userDataDir: 'C:/Users/Sa/AppData/Local/Google/Chrome/User Data/Profile 11',
-    
-        args: [
-            '--enable-features=NetworkService',
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--disable-web-security',
-            '--disable-features=IsolateOrigins,site-per-process',
-            '--shm-size=3gb', // this solves the issue
-          ],
-          ignoreHTTPSErrors: true,
-          executablePath:executablePath()
-    
-    });
     let ordinalCookie1 = 0
     queueKeyWordApi1.process(async(job,done)=>{
         let arrayData = await workkeyfunction(0,job,browser1,ordinalCookie1)
@@ -265,6 +230,7 @@ const  tiktokProfile = async()=>{
         
         done()
     })
+    
     let ordinalCookie2 = 0
     queueKeyWordApi2.process(async(job,done)=>{
         let arrayData = await workkeyfunction(1,job,browser2,ordinalCookie2)
@@ -514,61 +480,6 @@ const  tiktokProfile = async()=>{
                 ordinalCookie10++
                 if(ordinalCookie10==19){
                     ordinalCookie10 = 0
-                }
-            }
-            }
-        
-        done()
-    })
-    let ordinalCookie11 = 0
-    queueKeyWordApi11.process(async(job,done)=>{
-        let arrayData = await workkeyfunction(10,job,browser11,ordinalCookie11)
-        console.log(arrayData.length)
-        if(arrayData.length>200){
-            arrayData.map(async(x)=>{
-                if(x.date>=dateTimeStamp){
-
-                const insert = new schemaurlpost({keyword:job.data.keyword,...x})
-                await insert.save()}
-            })
-        }else{
-            if(arrayData.length==2){
-                arrayCookieDelete.push(arrayData)
-                await fs.writeFile('deletecookie.json',JSON.stringify(arrayCookieDelete))
-            }
-            if(job.data.addQueued<sumQueued){
-
-                queueKeyWordApi11.add({keyword:job.data.keyword,addQueued:job.data.addQueued+1})
-                ordinalCookie11++
-                if(ordinalCookie11==19){
-                    ordinalCookie11 = 0
-                }
-            }
-            }
-        
-        done()
-    })
-    let ordinalCookie12 = 0
-    queueKeyWordApi12.process(async(job,done)=>{
-        let arrayData = await workkeyfunction(11,job,browser12,ordinalCookie12)
-        console.log(arrayData.length)
-        if(arrayData.length>200){
-            arrayData.map(async(x)=>{
-                if(x.date>=dateTimeStamp){
-
-                const insert = new schemaurlpost({keyword:job.data.keyword,...x})
-                await insert.save()}
-            })
-        }else{
-            if(arrayData.length==2){
-                arrayCookieDelete.push(arrayData)
-                await fs.writeFile('deletecookie.json',JSON.stringify(arrayCookieDelete))
-            }
-            if(job.data.addQueued<sumQueued){
-                queueKeyWordApi12.add({keyword:job.data.keyword,addQueued:job.data.addQueued+1})
-                ordinalCookie12++
-                if(ordinalCookie12==19){
-                    ordinalCookie12 = 0
                 }
             }
             }
