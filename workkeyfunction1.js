@@ -27,10 +27,13 @@ export default async function workkey (indexCookie,job,browser,ordinalCookie){
         domTiktok = domtiktokkey.english
         await page.waitForSelector('a > span > svg')
         await page.focus(domTiktok.elementSearchBar)
+        
+        await delay(3000)
+
         await page.keyboard.type(job.data.keyword.trim(),{delay: 100})
         await delay(1000)
         await page.keyboard.press('Enter')
-        await delay(3000)
+        await delay(10000)
         await page.evaluate( () => {
             scrollBy(0, document.body.scrollHeight*100000)
         });  
@@ -90,8 +93,8 @@ export default async function workkey (indexCookie,job,browser,ordinalCookie){
         return indexCookieIsDeleted
         
     }
-    const insert = new schemacookie({keyword:job.data.keyword,ordinalCookie:ordinalCookie,indexCookie:indexCookie,length:arrayData.length})
-    insert.save()
+    // const insert = new schemacookie({keyword:job.data.keyword,ordinalCookie:ordinalCookie,indexCookie:indexCookie,length:arrayData.length})
+    // insert.save()
     // if(arrayData.length>200){
     //     arrayData.map(async(x)=>{
     //         const insert = new schemaurlpost({keyword:job.data.keyword,...x})

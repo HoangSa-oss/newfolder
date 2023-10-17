@@ -8,19 +8,28 @@ const queueKeyWord = new Queue('queueKeyWordApi1','redis://127.0.0.1:6379')
   
 
 const urlVdideo = [
-    "giao hàng nhanh",
-    "GHN",
-    "giaohangnhanh",
-    "giao hàng tiết kiệm",
-    "giaohangtietkiem",
-    "GHTK",
-    "J&T express",
-    "shopee express",
-    "best express",
-    "VNpost",
-    "vietnam post",
-    "viettel post",
-
+    "Nguyễn Thúc Thuỳ Tiên",
+    "Lê Dương Bảo Lâm",
+    "Hương Giang",
+    "HieuThuHai",
+    "Thanh Hằng",
+    "Lan Khuê",
+    "Hồ Ngọc Hà",
+    "Mỹ Tâm",
+    "H'HEN NIÊ",
+    "Sơn Tùng M-TP",
+    "chi pu",
+    "Phương Mỹ chi", 
+    "Hoàng Thùy Linh",
+    "Lê Hoàng Phương",
+    "Nguyễn Thị Hương Ly",
+    "Bích Phương",
+    "Double 2T",
+    "Hương Tràm",
+    "Ngô Kiến Huy",
+    "Diệu Nhi",
+    "Puka",
+    "Gin Tuấn Kiệt",
 ]
 console.log(urlVdideo.length)
 let addQueue = 0
@@ -28,7 +37,7 @@ for(let i=0;i<urlVdideo.length;i++){
     const urlPost = await schemaurlpost1.find({keyword:`${urlVdideo[i]}`})
     console.log(urlPost.length)
 // if(urlPost.length ==0){
-        if(addQueue<7){
+        if(addQueue<0){
             addQueue++
             queueKeyWord.add({keyword:`${urlVdideo[i]}`,addQueued:0})
             console.log({keyword:`${urlVdideo[i]}`})

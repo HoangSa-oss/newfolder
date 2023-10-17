@@ -535,6 +535,7 @@ const urlVdideo1 = [
 "btmarkets",
 "KAMA Capital",
 "kamacapital",
+"#MGVietNam",
 "#btmarkets",
 "#kamacapital",
 "Up Trades",
@@ -575,6 +576,8 @@ const urlVdideo1 = [
 "VNpost",
 "vietnam post",
 "viettel post",
+"Đất rừng hoa nam",
+"Đất rừng trung hoa"
 ]
 console.log(urlVdideo1.length)
 let addQueue1 = 0
