@@ -30,7 +30,7 @@ const  tiktokProfile = async()=>{
     process.setMaxListeners(0)
     const sumQueued = 5
     let arrayCookieDelete = []
-    const date = '2023-10-15'
+    const date = '2023-10-24'
     const dateTimeStamp = moment(date).format('X')
     console.log(dateTimeStamp)
     let indexCookie = 0 

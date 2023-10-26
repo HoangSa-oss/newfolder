@@ -5,6 +5,11 @@ import delay from 'delay';
 const queueKeyWord = new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
 
 const urlVdideo1 = [
+    "Xe Skoda",
+"Skoda Việt Nam",
+"Skoda 2023",
+"#skodavietnam",
+"#skodagovap",
     "#HCMCFILMFESTIVAL",
 "#FilmFestival",
 "#hiff2024",
