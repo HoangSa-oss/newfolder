@@ -21,6 +21,7 @@ const queueKeyWordApi8 = new Queue('queueKeyWordApi1','redis://127.0.0.1:6379')
 const queueKeyWordApi9 = new Queue('queueKeyWordApi1','redis://127.0.0.1:6379')
 const queueKeyWordApi10 = new Queue('queueKeyWordApi1','redis://127.0.0.1:6379')
 const queueKeyWordApi11 = new Queue('queueKeyWordApi1','redis://127.0.0.1:6379')
+const queueKeyWordApi12 = new Queue('queueKeyWordApi1','redis://127.0.0.1:6379')
 
 puppeteer.use(StealthPlugin());
 
@@ -29,7 +30,7 @@ const  tiktokProfile = async()=>{
     process.setMaxListeners(0)
     const sumQueued = 5
     let arrayCookieDelete = []
-    const date = '2023-08-01'
+    const date = '2023-11-28'
     const dateTimeStamp = moment(date).format('X')
     console.log(dateTimeStamp)
     let indexCookie = 0 
@@ -186,23 +187,7 @@ const  tiktokProfile = async()=>{
           executablePath:executablePath()
     
     });
-    const browser10 = await puppeteer.launch({
-        headless: false,
-        // userDataDir: 'C:/Users/Sa/AppData/Local/Google/Chrome/User Data/Profile 11',
-    
-        args: [
-            '--enable-features=NetworkService',
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--disable-web-security',
-            '--disable-features=IsolateOrigins,site-per-process',
-            '--shm-size=3gb', // this solves the issue
-          ],
-          ignoreHTTPSErrors: true,
-          executablePath:executablePath()
-    
-    });
+
     let ordinalCookie1 = 0
     queueKeyWordApi1.process(async(job,done)=>{
         let arrayData = await workkeyfunction(0,job,browser1,ordinalCookie1)
@@ -458,34 +443,7 @@ const  tiktokProfile = async()=>{
         
         done()
     })
-    let ordinalCookie10 = 0
-    queueKeyWordApi10.process(async(job,done)=>{
-        let arrayData = await workkeyfunction(9,job,browser10,ordinalCookie10)
-        console.log(arrayData.length)
-        if(arrayData.length>200){
-            arrayData.map(async(x)=>{
-                if(x.date>=dateTimeStamp){
 
-                const insert = new schemaurlpost({keyword:job.data.keyword,...x})
-                await insert.save()}
-            })
-        }else{
-            if(arrayData.length==2){
-                arrayCookieDelete.push(arrayData)
-                await fs.writeFile('deletecookie.json',JSON.stringify(arrayCookieDelete))
-            }
-            if(job.data.addQueued<sumQueued){
-
-                queueKeyWordApi10.add({keyword:job.data.keyword,addQueued:job.data.addQueued+1})
-                ordinalCookie10++
-                if(ordinalCookie10==19){
-                    ordinalCookie10 = 0
-                }
-            }
-            }
-        
-        done()
-    })
 }
 tiktokProfile()
 

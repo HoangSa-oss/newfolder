@@ -9,7 +9,8 @@ import delay from 'delay';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import  {executablePath} from 'puppeteer'
 import fs from 'fs/promises'
-
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 const queueKeyWordApi1 = new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
 const queueKeyWordApi2 = new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
 const queueKeyWordApi3 = new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
@@ -30,7 +31,7 @@ const  tiktokProfile = async()=>{
     process.setMaxListeners(0)
     const sumQueued = 5
     let arrayCookieDelete = []
-    const date = '2023-10-24'
+    const date = '2023-12-12'
     const dateTimeStamp = moment(date).format('X')
     console.log(dateTimeStamp)
     let indexCookie = 0 
@@ -46,6 +47,8 @@ const  tiktokProfile = async()=>{
             '--disable-web-security',
             '--disable-features=IsolateOrigins,site-per-process',
             '--shm-size=3gb', // this solves the issue
+            '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+            
           ],
           ignoreHTTPSErrors: true,
           executablePath:executablePath()

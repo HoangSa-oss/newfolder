@@ -5,6 +5,28 @@ import delay from 'delay';
 const queueKeyWord = new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
 
 const urlVdideo1 = [
+    "Giá Aptamil cao",
+"Con uống Aptamil tăng cân chậm",
+"Dùng aptamil táo",
+"Con không hợp aptamil",
+"Aptamil hàng gỉa",
+"aptamil khó mua",
+"sữa aptamil",
+"aptamil",
+    "#BigSea_Land" ,
+    "#BigSea_Group",
+    "#BigSeaLand" ,
+    "#Bigseagroup",
+    "công ty BigSea",
+    "tập đoàn Big Sea",
+    "BigSea PHẠM VIẾT HẢI",
+    "BigSea TRẦN THỊ NGỌC BÍCH",
+    "BigSeaGroup",
+    "BigseaLand",
+    "BigSea Group",
+    "Big Sea Group",
+    "Bigsea Land",
+    "Big sea Land",
     "Xe Skoda",
 "Skoda Việt Nam",
 "Skoda 2023",
@@ -32,6 +54,7 @@ const urlVdideo1 = [
 "Liên hoan Phim Quốc tế Thành phố Hồ Chí Minh",
 "Ho Chi Minh City International Film Festival",
 "Liên hoan phim Quốc tế TPHCM HIFF 2024",
+
     "#KOCVIETNAM",
     "#KOCVIETNAM2023",
     "#DaichienKOC",
@@ -582,7 +605,11 @@ const urlVdideo1 = [
 "vietnam post",
 "viettel post",
 "Đất rừng hoa nam",
-"Đất rừng trung hoa"
+"Đất rừng trung hoa",
+"Human Act Prize",
+"#HumanActPrize",
+"#RoadtoGalaHAP",
+"Giải thưởng hành động vì cộng đồng",
 ]
 console.log(urlVdideo1.length)
 let addQueue1 = 0

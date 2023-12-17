@@ -27,7 +27,9 @@ export default async function workkey (indexCookie,job,browser,ordinalCookie){
         domTiktok = domtiktokkey.english
         await page.waitForSelector('a > span > svg')
         await page.focus(domTiktok.elementSearchBar)
+        
         await delay(3000)
+
         await page.keyboard.type(job.data.keyword.trim(),{delay: 100})
         await delay(1000)
         await page.keyboard.press('Enter')
@@ -47,8 +49,13 @@ export default async function workkey (indexCookie,job,browser,ordinalCookie){
         const indexOfOffset = requestUrl.indexOf('offset')
         const requestFirst = requestUrl.slice(0,indexOfOffset+7)
         const requestEnd = requestUrl.slice(indexOfOffset+9,requestUrl.length+100)
+        const requestEndEdit = requestEnd.split('&').filter((item,index)=>{
+            if(index<requestEnd.split('&').length-3)
+                return item
+        })
+        console.log(job.data.keyword.trim())
         for(let i=0;i<100;i++){
-            let requestFinal =`${requestFirst}${i*12}${requestEnd}` 
+            let requestFinal =`${requestFirst}${i*12}&${requestEndEdit.join('&')}` 
             await page.goto(requestFinal, { waitUntil: "networkidle0" })
             const text = await page.$eval("body > pre", (el) => el.textContent);
             const jsonText = JSON.parse(text)

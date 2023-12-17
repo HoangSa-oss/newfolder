@@ -8,20 +8,21 @@ const queueKeyWord = new Queue('queueKeyWordApi1','redis://127.0.0.1:6379')
   
 
 const urlVdideo = [
-    "#BigSea_Land" ,
-    "#BigSea_Group",
-    "#BigSeaLand" ,
-    "#Bigseagroup",
-    "công ty BigSea",
-    "tập đoàn Big Sea",
-    "BigSea PHẠM VIẾT HẢI",
-    "BigSea TRẦN THỊ NGỌC BÍCH",
-    "BigSeaGroup",
-    "BigseaLand",
-    "BigSea Group",
-    "Big Sea Group",
-    "Bigsea Land",
-    "Big sea Land",
+    "#Lazada1212",
+    "#LivestreamSuperSale1212",
+    "#LazLive",
+    "#PinkyLazzie",
+    "#Saletungbung",
+    "#SieuHoiChemGia",
+    "#LazadaGiaHoi",
+    "#HotSaleLive",
+    "#LazFlashMax",
+    "#ChoiceonLazada",
+    "Lazada1212",
+    "Lazada 12.12",
+    "LIVESTREAM SUPERSALE 12.12",
+    
+    
 ]
 console.log(urlVdideo.length)
 let addQueue = 0
