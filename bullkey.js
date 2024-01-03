@@ -5,6 +5,8 @@ import delay from 'delay';
 const queueKeyWord = new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
 
 const urlVdideo1 = [
+
+
     "Giá Aptamil cao",
 "Con uống Aptamil tăng cân chậm",
 "Dùng aptamil táo",
@@ -610,6 +612,33 @@ const urlVdideo1 = [
 "#HumanActPrize",
 "#RoadtoGalaHAP",
 "Giải thưởng hành động vì cộng đồng",
+"#WeChoiceAwards",
+"#WeChoice",
+"#WeChoiceAwards2023",
+"#RoadToWeChoice2023",
+"#DámđammêDámrựcrỡ",
+"#DamdammeDamrucro",
+"#WCA2023",
+"đề cử #WCA2023",
+"giải thưởng #WCA2023",
+"bình chọn #WCA2023",
+"tôn vinh #WCA2023",
+"đề cử WCA2023",
+"giải thưởng WCA2023",
+"bình chọn WCA2023",
+"tôn vinh WCA2023",
+"đề cử we choice",
+"giải thưởng we choice",
+"bình chọn we choice",
+"tôn vinh we choice",
+"WeChoice Awards",
+"We Choice Awards",
+"WE CHOICE AWARD",
+"#WeChoiceAwards",
+"#WeChoice",
+"#WeChoiceAwards2023",
+"#RoadToWeChoice2023",
+"#DámđammêDámrựcrỡ",
 ]
 console.log(urlVdideo1.length)
 let addQueue1 = 0

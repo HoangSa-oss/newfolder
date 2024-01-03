@@ -53,7 +53,6 @@ export default async function workkey (indexCookie,job,browser,ordinalCookie){
             if(index<requestEnd.split('&').length-3)
                 return item
         })
-        console.log(job.data.keyword.trim())
         for(let i=0;i<100;i++){
             let requestFinal =`${requestFirst}${i*12}&${requestEndEdit.join('&')}` 
             await page.goto(requestFinal, { waitUntil: "networkidle0" })

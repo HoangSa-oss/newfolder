@@ -31,7 +31,7 @@ const  tiktokProfile = async()=>{
     process.setMaxListeners(0)
     const sumQueued = 5
     let arrayCookieDelete = []
-    const date = '2023-12-12'
+    const date = '2023-12-31'
     const dateTimeStamp = moment(date).format('X')
     console.log(dateTimeStamp)
     let indexCookie = 0 
@@ -71,57 +71,57 @@ const  tiktokProfile = async()=>{
           executablePath:executablePath()
     
     }); 
-    const browser3 = await puppeteer.launch({
-        headless: false,
-        // userDataDir: 'C:/Users/Sa/AppData/Local/Google/Chrome/User Data/Profile 11',
+    // const browser3 = await puppeteer.launch({
+    //     headless: false,
+    //     // userDataDir: 'C:/Users/Sa/AppData/Local/Google/Chrome/User Data/Profile 11',
     
-        args: [
-            '--enable-features=NetworkService',
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--disable-web-security',
-            '--disable-features=IsolateOrigins,site-per-process',
-            '--shm-size=3gb', // this solves the issue
-          ],
-          ignoreHTTPSErrors: true,
-          executablePath:executablePath()
+    //     args: [
+    //         '--enable-features=NetworkService',
+    //         '--no-sandbox',
+    //         '--disable-setuid-sandbox',
+    //         '--disable-dev-shm-usage',
+    //         '--disable-web-security',
+    //         '--disable-features=IsolateOrigins,site-per-process',
+    //         '--shm-size=3gb', // this solves the issue
+    //       ],
+    //       ignoreHTTPSErrors: true,
+    //       executablePath:executablePath()
     
-    }); 
-    const browser4 = await puppeteer.launch({
-        headless: false,
-        // userDataDir: 'C:/Users/Sa/AppData/Local/Google/Chrome/User Data/Profile 11',
+    // }); 
+    // const browser4 = await puppeteer.launch({
+    //     headless: false,
+    //     // userDataDir: 'C:/Users/Sa/AppData/Local/Google/Chrome/User Data/Profile 11',
     
-        args: [
-            '--enable-features=NetworkService',
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--disable-web-security',
-            '--disable-features=IsolateOrigins,site-per-process',
-            '--shm-size=3gb', // this solves the issue
-          ],
-          ignoreHTTPSErrors: true,
-          executablePath:executablePath()
+    //     args: [
+    //         '--enable-features=NetworkService',
+    //         '--no-sandbox',
+    //         '--disable-setuid-sandbox',
+    //         '--disable-dev-shm-usage',
+    //         '--disable-web-security',
+    //         '--disable-features=IsolateOrigins,site-per-process',
+    //         '--shm-size=3gb', // this solves the issue
+    //       ],
+    //       ignoreHTTPSErrors: true,
+    //       executablePath:executablePath()
     
-    });
-    const browser5 = await puppeteer.launch({
-        headless: false,
-        // userDataDir: 'C:/Users/Sa/AppData/Local/Google/Chrome/User Data/Profile 11',
+    // });
+    // const browser5 = await puppeteer.launch({
+    //     headless: false,
+    //     // userDataDir: 'C:/Users/Sa/AppData/Local/Google/Chrome/User Data/Profile 11',
     
-        args: [
-            '--enable-features=NetworkService',
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--disable-web-security',
-            '--disable-features=IsolateOrigins,site-per-process',
-            '--shm-size=3gb', // this solves the issue
-          ],
-          ignoreHTTPSErrors: true,
-          executablePath:executablePath()
+    //     args: [
+    //         '--enable-features=NetworkService',
+    //         '--no-sandbox',
+    //         '--disable-setuid-sandbox',
+    //         '--disable-dev-shm-usage',
+    //         '--disable-web-security',
+    //         '--disable-features=IsolateOrigins,site-per-process',
+    //         '--shm-size=3gb', // this solves the issue
+    //       ],
+    //       ignoreHTTPSErrors: true,
+    //       executablePath:executablePath()
     
-    });
+    // });
     const browser6 = await puppeteer.launch({
         headless: false,
         // userDataDir: 'C:/Users/Sa/AppData/Local/Google/Chrome/User Data/Profile 11',
@@ -223,8 +223,7 @@ const  tiktokProfile = async()=>{
           ignoreHTTPSErrors: true,
           executablePath:executablePath()
     
-    });
-    const browser12 = await puppeteer.launch({
+    });    const browser12 = await puppeteer.launch({
         headless: false,
         // userDataDir: 'C:/Users/Sa/AppData/Local/Google/Chrome/User Data/Profile 11',
     
@@ -298,92 +297,92 @@ const  tiktokProfile = async()=>{
         
         done()
     })
-    let ordinalCookie3 = 0
-    queueKeyWordApi3.process(async(job,done)=>{
-        let arrayData = await workkeyfunction(2,job,browser3,ordinalCookie3)
-        console.log(arrayData.length)
+    // let ordinalCookie3 = 0
+    // queueKeyWordApi3.process(async(job,done)=>{
+    //     let arrayData = await workkeyfunction(2,job,browser3,ordinalCookie3)
+    //     console.log(arrayData.length)
 
-        if(arrayData.length>200){
-            arrayData.map(async(x)=>{
-                if(x.date>=dateTimeStamp){
+    //     if(arrayData.length>200){
+    //         arrayData.map(async(x)=>{
+    //             if(x.date>=dateTimeStamp){
 
-                const insert = new schemaurlpost({keyword:job.data.keyword,...x})
-                await insert.save()}
-            })
-        }else{
-            if(arrayData.length==2){
-                arrayCookieDelete.push(arrayData)
-                await fs.writeFile('deletecookie.json',JSON.stringify(arrayCookieDelete))
-            }
-            if(job.data.addQueued<sumQueued){
+    //             const insert = new schemaurlpost({keyword:job.data.keyword,...x})
+    //             await insert.save()}
+    //         })
+    //     }else{
+    //         if(arrayData.length==2){
+    //             arrayCookieDelete.push(arrayData)
+    //             await fs.writeFile('deletecookie.json',JSON.stringify(arrayCookieDelete))
+    //         }
+    //         if(job.data.addQueued<sumQueued){
 
-            queueKeyWordApi3.add({keyword:job.data.keyword,addQueued:job.data.addQueued+1})
+    //         queueKeyWordApi3.add({keyword:job.data.keyword,addQueued:job.data.addQueued+1})
 
-            ordinalCookie3++
-            if(ordinalCookie3==19){
-                ordinalCookie3 = 0
-            }
-        }
-            }
-        done()
-    })
-    let ordinalCookie4 = 0
-    queueKeyWordApi4.process(async(job,done)=>{
-        let arrayData = await workkeyfunction(3,job,browser4,ordinalCookie4)
-        console.log(arrayData.length)
-        if(arrayData.length>200){
-            arrayData.map(async(x)=>{
-                if(x.date>=dateTimeStamp){
+    //         ordinalCookie3++
+    //         if(ordinalCookie3==19){
+    //             ordinalCookie3 = 0
+    //         }
+    //     }
+    //         }
+    //     done()
+    // })
+    // let ordinalCookie4 = 0
+    // queueKeyWordApi4.process(async(job,done)=>{
+    //     let arrayData = await workkeyfunction(3,job,browser4,ordinalCookie4)
+    //     console.log(arrayData.length)
+    //     if(arrayData.length>200){
+    //         arrayData.map(async(x)=>{
+    //             if(x.date>=dateTimeStamp){
 
-                const insert = new schemaurlpost({keyword:job.data.keyword,...x})
-                await insert.save()}
-            })
-        }else{
-            if(arrayData.length==2){
-                arrayCookieDelete.push(arrayData)
-                await fs.writeFile('deletecookie.json',JSON.stringify(arrayCookieDelete))
-            }
-            if(job.data.addQueued<sumQueued){
+    //             const insert = new schemaurlpost({keyword:job.data.keyword,...x})
+    //             await insert.save()}
+    //         })
+    //     }else{
+    //         if(arrayData.length==2){
+    //             arrayCookieDelete.push(arrayData)
+    //             await fs.writeFile('deletecookie.json',JSON.stringify(arrayCookieDelete))
+    //         }
+    //         if(job.data.addQueued<sumQueued){
 
-                queueKeyWordApi4.add({keyword:job.data.keyword,addQueued:job.data.addQueued+1})
-                ordinalCookie4++
-                if(ordinalCookie4==19){
-                    ordinalCookie4 = 0
-                }
-            }
-            }
+    //             queueKeyWordApi4.add({keyword:job.data.keyword,addQueued:job.data.addQueued+1})
+    //             ordinalCookie4++
+    //             if(ordinalCookie4==19){
+    //                 ordinalCookie4 = 0
+    //             }
+    //         }
+    //         }
         
-        done()
-    })
-    let ordinalCookie5 = 0
-    queueKeyWordApi5.process(async(job,done)=>{
-        let arrayData = await workkeyfunction(4,job,browser5,ordinalCookie5)
-        console.log(arrayData.length)
-        if(arrayData.length>200){
-            arrayData.map(async(x)=>{
-                if(x.date>=dateTimeStamp){
+    //     done()
+    // })
+    // let ordinalCookie5 = 0
+    // queueKeyWordApi5.process(async(job,done)=>{
+    //     let arrayData = await workkeyfunction(4,job,browser5,ordinalCookie5)
+    //     console.log(arrayData.length)
+    //     if(arrayData.length>200){
+    //         arrayData.map(async(x)=>{
+    //             if(x.date>=dateTimeStamp){
 
-                const insert = new schemaurlpost({keyword:job.data.keyword,...x})
-                await insert.save()}
-            })
-        }else{
-            if(arrayData.length==2){
-                arrayCookieDelete.push(arrayData)
-                await fs.writeFile('deletecookie.json',JSON.stringify(arrayCookieDelete))
-            }
-            if(job.data.addQueued<sumQueued){
+    //             const insert = new schemaurlpost({keyword:job.data.keyword,...x})
+    //             await insert.save()}
+    //         })
+    //     }else{
+    //         if(arrayData.length==2){
+    //             arrayCookieDelete.push(arrayData)
+    //             await fs.writeFile('deletecookie.json',JSON.stringify(arrayCookieDelete))
+    //         }
+    //         if(job.data.addQueued<sumQueued){
 
-                queueKeyWordApi5.add({keyword:job.data.keyword,addQueued:job.data.addQueued+1})
-                ordinalCookie5++
-                if(ordinalCookie5==19){
-                    ordinalCookie5 = 0
-                }
-            }
-            }
+    //             queueKeyWordApi5.add({keyword:job.data.keyword,addQueued:job.data.addQueued+1})
+    //             ordinalCookie5++
+    //             if(ordinalCookie5==19){
+    //                 ordinalCookie5 = 0
+    //             }
+    //         }
+    //         }
          
         
-        done()
-    })
+    //     done()
+    // })
     let ordinalCookie6 = 0
     queueKeyWordApi6.process(async(job,done)=>{
         let arrayData = await workkeyfunction(5,job,browser6,ordinalCookie6)
@@ -522,7 +521,7 @@ const  tiktokProfile = async()=>{
             }
         
         done()
-    })
+    }) 
     let ordinalCookie11 = 0
     queueKeyWordApi11.process(async(job,done)=>{
         let arrayData = await workkeyfunction(10,job,browser11,ordinalCookie11)
@@ -550,7 +549,7 @@ const  tiktokProfile = async()=>{
             }
         
         done()
-    })
+    }) 
     let ordinalCookie12 = 0
     queueKeyWordApi12.process(async(job,done)=>{
         let arrayData = await workkeyfunction(11,job,browser12,ordinalCookie12)
@@ -568,6 +567,7 @@ const  tiktokProfile = async()=>{
                 await fs.writeFile('deletecookie.json',JSON.stringify(arrayCookieDelete))
             }
             if(job.data.addQueued<sumQueued){
+
                 queueKeyWordApi12.add({keyword:job.data.keyword,addQueued:job.data.addQueued+1})
                 ordinalCookie12++
                 if(ordinalCookie12==19){
@@ -577,7 +577,7 @@ const  tiktokProfile = async()=>{
             }
         
         done()
-    })
+    }) 
 }
 tiktokProfile()
 
