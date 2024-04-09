@@ -8,60 +8,584 @@ const queueKeyWord = new Queue('queueKeyWordApi1','redis://127.0.0.1:6379')
   
 
 const urlVdideo = [
-    "#ChiDepDapGioReSong",
-    "#ChiDep2023",
-    "#2Ngay1Dem",
-    "#TheChillFest",
-    "#MoThungChill",
-    "#HoaHauHoanVuVietnam",
-    "#MissCosmoVietnam",
-    "#grandworldhanoi",
-    "#saonhapngu2024",
-    "#Saonhapngu",
-    "#ENTERACOUNTDOWN",
-    "#COUNTDOWN2024",
-    "#KOKOMIDai",
-    "#TruyTimCaoThuDoiMi",
-    "#TếtTặngAnlene",
-    "#LuxuryCountdownParty",
-    "#MungNamCanTruong",
-    "#KhaiXuanBanLinh",
-    "#NetRiengToaSang",
-    "#LSX2023",
-    "#LanSongXanh2023",
-    "#NhayCamDeChieu",
-    "#Songmotdoicolai",
-    "#VietinBank35nam",
-    "#ConcertSMDCL",
-    "#TếtỔnRồi",
-    "#MoKetNoiBungSacXuan",
-    "#BayRaTheGioi",
-    "#LamMoiChinhMinh",
-    "#trendtatdentheonhac",
-    "#Khoeduongruot",
-    "#MoThungChill",
-    "#ToiMuaChill",
-    "#ChillPassport",
-    "#QuaTangVang",
-    "#NamRongHoangKim",
-    "#NhinLai2023",
-    "#ecoparkcountdown",
-    "#ViGPT",
-    "Chị Đẹp Đạp Gió",
-    "2 ngày 1 đêm",
-    "The Chill Fest",
-    "Tết 2024",
-    "Count down",
-    "VINFUTURE 2023",
-    "Quang Hải",
-    "Chu Thanh Huyền",
-    "sao nhập ngũ",
-    "Baemin",
-    "Như Quỳnh",
-    "Paris By Night",
-    "Black Pink",
-    "ViGPT",
-    "#CungKinhDoTetVuiChuyenSumVay",
+    "TheNextKOC",
+    "#TheNextKOC"
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
 ]
 console.log(urlVdideo.length)
 let addQueue = 0
@@ -72,7 +596,7 @@ for(let i=0;i<urlVdideo.length;i++){
         if(addQueue<0){
             addQueue++
             queueKeyWord.add({keyword:`${urlVdideo[i]}`,addQueued:0})
-            console.log({keyword:`${urlVdideo[i]}`})
+            console.log({keyword:`${urlVdideo[i]}123`})
             await delay(10000)
 
         }else{
@@ -80,8 +604,8 @@ for(let i=0;i<urlVdideo.length;i++){
             console.log({keyword:`${urlVdideo[i]}`,addQueued:0})
         }
        
-}
 // }
+}
 
 // const urlVdideo = await schemakeyword.find({})
 // console.log(urlVdideo.length)
@@ -107,3 +631,4 @@ for(let i=0;i<urlVdideo.length;i++){
 
 
 // await queueKeyWord.obliterate({ force: true });
+// 

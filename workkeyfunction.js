@@ -23,17 +23,17 @@ export default async function workkey (indexCookie,job,browser,ordinalCookie){
         //     let a =  await request.url()
         //     console.log(a)
         // })
-        await page.goto('https://www.tiktok.com')
+        await page.goto("https://www.tiktok.com/")
         domTiktok = domtiktokkey.english
         await page.waitForSelector('a > span > svg')
         await page.focus(domTiktok.elementSearchBar)
         
-        await delay(3000)
+        await delay(1000)
 
         await page.keyboard.type(job.data.keyword.trim(),{delay: 100})
         await delay(1000)
         await page.keyboard.press('Enter')
-        await delay(10000)
+        await delay(5000)
         await page.evaluate( () => {
             scrollBy(0, document.body.scrollHeight*100000)
         });  
@@ -54,7 +54,12 @@ export default async function workkey (indexCookie,job,browser,ordinalCookie){
                 return item
         })
         for(let i=0;i<100;i++){
+            await delay(100)
             let requestFinal =`${requestFirst}${i*12}&${requestEndEdit.join('&')}` 
+            if(i==0){{
+                console.log(requestFinal)
+            }}
+           
             await page.goto(requestFinal, { waitUntil: "networkidle0" })
             const text = await page.$eval("body > pre", (el) => el.textContent);
             const jsonText = JSON.parse(text)
@@ -85,14 +90,14 @@ export default async function workkey (indexCookie,job,browser,ordinalCookie){
             indexCookieIsDeleted = [indexCookie,ordinalCookie]
         }
         console.log('index:',indexCookie)
-        console.log(error)
+        console.log(error.message)
         console.log('index:',indexCookie)
         console.log('ordinalCookie:',ordinalCookie)
 
         try {
             await page.close()
         } catch (error) {
-            console.log(error)
+            console.log(error.message)
         }   
         return indexCookieIsDeleted
         
@@ -111,7 +116,7 @@ export default async function workkey (indexCookie,job,browser,ordinalCookie){
     try {
         await page.close()
     } catch (error) {
-        console.log(error)
+        console.log(error.message)
     }    
     // console.log(arrayData.length)
     if(arrayData.length==0){

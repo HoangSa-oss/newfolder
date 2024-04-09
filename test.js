@@ -1,5 +1,6 @@
 import Queue from 'bull';
 import cookie from './cookiedefault.json' assert { type: 'json' }
+import cookie2 from './cookiedefault2.json' assert { type: 'json' }
 const queueKeyWord = new Queue('queueKeyWord','redis://127.0.0.1:6379')
 const queueDetailUrl = new Queue('queueDetailUrl','redis://127.0.0.1:6379')
 const queueHasTag = new Queue('queueHasTag','redis://127.0.0.1:6379')
@@ -13,3 +14,9 @@ console.log(await queueKeyWordApi.count())
 console.log(await queueKeyWordApi1.count())
 
 cookie.map((x)=>{console.log(x.length)})
+console.log(await queueDetailUrl.count())
+console.log(await queueKeyWord.count())
+console.log(await queueHasTag.count())
+console.log(await queueKeyWordApi.count())
+console.log(await queueKeyWordApi1.count())
+cookie2.map((x)=>{console.log(x.length)})

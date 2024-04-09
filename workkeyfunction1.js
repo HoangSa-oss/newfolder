@@ -54,6 +54,7 @@ export default async function workkey (indexCookie,job,browser,ordinalCookie){
                 return item
         })
         for(let i=0;i<100;i++){
+            await delay(100)
             let requestFinal =`${requestFirst}${i*12}&${requestEndEdit.join('&')}` 
             await page.goto(requestFinal, { waitUntil: "networkidle0" })
             const text = await page.$eval("body > pre", (el) => el.textContent);
