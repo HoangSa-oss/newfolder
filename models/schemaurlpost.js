@@ -8,5 +8,6 @@ const profileSchema = new Schema({
     keyword:String,
     urlPost:String,
     date:String,
+    postApi:Boolean
 }, { versionKey: false })
 export default model('1keyworddaily',profileSchema);

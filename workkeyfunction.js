@@ -1,11 +1,7 @@
 import puppeteer from 'puppeteer-extra';
 import domtiktokkey from './dom/domtiktokkey.json' assert { type: 'json' }
-import Queue from 'bull';
-import moment from 'moment';
+
 import cookie from './cookiedefault.json' assert { type: 'json' }
-import schemacookie from './models/schemacookie.js';
-const queueKeyWordApi = new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
-import fs from 'fs/promises'
 import delay from 'delay';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import  {executablePath} from 'puppeteer'
@@ -56,9 +52,7 @@ export default async function workkey (indexCookie,job,browser,ordinalCookie){
         for(let i=0;i<100;i++){
             await delay(100)
             let requestFinal =`${requestFirst}${i*12}&${requestEndEdit.join('&')}` 
-            if(i==0){{
-                console.log(requestFinal)
-            }}
+         
            
             await page.goto(requestFinal, { waitUntil: "networkidle0" })
             const text = await page.$eval("body > pre", (el) => el.textContent);

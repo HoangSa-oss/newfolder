@@ -31,7 +31,7 @@ const  tiktokProfile = async()=>{
     process.setMaxListeners(0)
     const sumQueued = 5
     let arrayCookieDelete = []
-    const date = '2024-04-06'
+    const date = '2000-05-26'
     const dateTimeStamp = moment(date).format('X')
     console.log(dateTimeStamp)
     let indexCookie = 0 
@@ -247,7 +247,7 @@ const  tiktokProfile = async()=>{
         if(arrayData.length>200){
             arrayData.map(async(x)=>{
                 if(x.date>=dateTimeStamp){
-                    const insert = new schemaurlpost({keyword:job.data.keyword,...x})
+                    const insert = new schemaurlpost({keyword:job.data.keyword,...x,postApi:false})
                     await insert.save()
                 } 
             })
@@ -275,7 +275,7 @@ const  tiktokProfile = async()=>{
             arrayData.map(async(x)=>{
                 if(x.date>=dateTimeStamp){
 
-                const insert = new schemaurlpost({keyword:job.data.keyword,...x})
+                const insert = new schemaurlpost({keyword:job.data.keyword,...x,postApi:false})
                 await insert.save()
                 }
             })
@@ -306,7 +306,7 @@ const  tiktokProfile = async()=>{
             arrayData.map(async(x)=>{
                 if(x.date>=dateTimeStamp){
 
-                const insert = new schemaurlpost({keyword:job.data.keyword,...x})
+                const insert = new schemaurlpost({keyword:job.data.keyword,...x,postApi:false})
                 await insert.save()}
             })
         }else{
@@ -334,7 +334,7 @@ const  tiktokProfile = async()=>{
             arrayData.map(async(x)=>{
                 if(x.date>=dateTimeStamp){
 
-                const insert = new schemaurlpost({keyword:job.data.keyword,...x})
+                const insert = new schemaurlpost({keyword:job.data.keyword,...x,postApi:false})
                 await insert.save()}
             })
         }else{
@@ -362,7 +362,7 @@ const  tiktokProfile = async()=>{
             arrayData.map(async(x)=>{
                 if(x.date>=dateTimeStamp){
 
-                const insert = new schemaurlpost({keyword:job.data.keyword,...x})
+                const insert = new schemaurlpost({keyword:job.data.keyword,...x,postApi:false})
                 await insert.save()}
             })
         }else{
@@ -390,7 +390,7 @@ const  tiktokProfile = async()=>{
         if(arrayData.length>200){
             arrayData.map(async(x)=>{
                 if(x.date>=dateTimeStamp){
-                const insert = new schemaurlpost({keyword:job.data.keyword,...x})
+                const insert = new schemaurlpost({keyword:job.data.keyword,...x,postApi:false})
                 await insert.save()}
             })
         }else{
@@ -418,7 +418,7 @@ const  tiktokProfile = async()=>{
             arrayData.map(async(x)=>{
                 if(x.date>=dateTimeStamp){
 
-                const insert = new schemaurlpost({keyword:job.data.keyword,...x})
+                const insert = new schemaurlpost({keyword:job.data.keyword,...x,postApi:false})
                 await insert.save()}
             })
         }else{
@@ -446,7 +446,7 @@ const  tiktokProfile = async()=>{
             arrayData.map(async(x)=>{
                 if(x.date>=dateTimeStamp){
 
-                const insert = new schemaurlpost({keyword:job.data.keyword,...x})
+                const insert = new schemaurlpost({keyword:job.data.keyword,...x,postApi:false})
                 await insert.save()}
             })
         }else{
@@ -474,7 +474,7 @@ const  tiktokProfile = async()=>{
             arrayData.map(async(x)=>{
                 if(x.date>=dateTimeStamp){
 
-                const insert = new schemaurlpost({keyword:job.data.keyword,...x})
+                const insert = new schemaurlpost({keyword:job.data.keyword,...x,postApi:false})
                 await insert.save()}
             })
         }else{
@@ -502,7 +502,7 @@ const  tiktokProfile = async()=>{
             arrayData.map(async(x)=>{
                 if(x.date>=dateTimeStamp){
 
-                const insert = new schemaurlpost({keyword:job.data.keyword,...x})
+                const insert = new schemaurlpost({keyword:job.data.keyword,...x,postApi:false})
                 await insert.save()}
             })
         }else{
@@ -530,7 +530,7 @@ const  tiktokProfile = async()=>{
             arrayData.map(async(x)=>{
                 if(x.date>=dateTimeStamp){
 
-                const insert = new schemaurlpost({keyword:job.data.keyword,...x})
+                const insert = new schemaurlpost({keyword:job.data.keyword,...x,postApi:false})
                 await insert.save()}
             })
         }else{
@@ -558,7 +558,7 @@ const  tiktokProfile = async()=>{
             arrayData.map(async(x)=>{
                 if(x.date>=dateTimeStamp){
 
-                const insert = new schemaurlpost({keyword:job.data.keyword,...x})
+                const insert = new schemaurlpost({keyword:job.data.keyword,...x,postApi:false})
                 await insert.save()}
             })
         }else{

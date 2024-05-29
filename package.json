@@ -19,7 +19,8 @@
     "bullhastag": "babel-node bullhastag.js",
     "getcookie": "babel-node getcookie.js",
     "workkey1": "babel-node workkey1.js",
-    "bullkey1": "babel-node bullkey1.js"
+    "bullkey1": "babel-node bullkey1.js",
+    "api": "babel-node api/post.js"
   },
   "keywords": [],
   "author": "",
@@ -43,6 +44,7 @@
     "moment": "^2.29.4",
     "mongodb": "^4.6.0",
     "mongoose": "^6.3.4",
+    "node-cron": "^3.0.3",
     "nodemon": "^2.0.16",
     "pm2": "^5.2.0",
     "puppeteer": "^21.6.1",
