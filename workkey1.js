@@ -70,9 +70,10 @@ const  tiktokProfile = async(i)=>{
                 //     await fs.writeFile('deletecookie.json',JSON.stringify(arrayCookieDelete))
                 // }
                 if(job.data.addQueued<sumQueued){
+                    console.log('conca')
                     queueKeyWordApi.add({keyword:job.data.keyword,addQueued:job.data.addQueued+1})
                     ordinalCookie++
-                    if(ordinalCookie==cookieArray[i].length-1){
+                    if(ordinalCookie==cookieArray[i].length){
                         ordinalCookie = 0
                     }
                 }

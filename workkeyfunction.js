@@ -49,6 +49,7 @@ export default async function workkey (indexCookie,job,browser,ordinalCookie){
             if(index<requestEnd.split('&').length-3)
                 return item
         })
+        let condtionBreak = 0
         for(let i=0;i<100;i++){
             await delay(100)
             let requestFinal =`${requestFirst}${i*12}&${requestEndEdit.join('&')}` 
@@ -58,7 +59,9 @@ export default async function workkey (indexCookie,job,browser,ordinalCookie){
             const text = await page.$eval("body > pre", (el) => el.textContent);
             const jsonText = JSON.parse(text)
            
-            if (jsonText.has_more == 0||jsonText.status_code==2484 ) break;
+            if (jsonText.has_more == 0||jsonText.status_code==2484 ){
+                condtionBreak++
+            } ;
             const resData = jsonText.data
                 .filter((item) => item.type == 1)
                 .map((item) => {
@@ -75,6 +78,9 @@ export default async function workkey (indexCookie,job,browser,ordinalCookie){
             //         await insert.save()
             //     }
             // })
+            if(condtionBreak==3){
+                break
+            }
             
         }
     
