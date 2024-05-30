@@ -3,7 +3,6 @@ import domtiktokkey from './dom/domtiktokkey.json' assert { type: 'json' }
 import Queue from 'bull';
 import moment from 'moment';
 import cookie from './cookiedefault.json' assert { type: 'json' }
-import schemacookie from './models/schemacookie.js';
 const queueKeyWordApi = new Queue('queueKeyWordApi','redis://127.0.0.1:6379')
 import fs from 'fs/promises'
 import delay from 'delay';
@@ -27,7 +26,7 @@ export default async function workkey (indexCookie,job,browser,ordinalCookie){
         domTiktok = domtiktokkey.english
         await page.waitForSelector('a > span > svg')
         await page.focus(domTiktok.elementSearchBar)
-        
+   
         await delay(3000)
 
         await page.keyboard.type(job.data.keyword.trim(),{delay: 100})
@@ -48,7 +47,8 @@ export default async function workkey (indexCookie,job,browser,ordinalCookie){
         const requestUrl = request.url()
         const indexOfOffset = requestUrl.indexOf('offset')
         const requestFirst = requestUrl.slice(0,indexOfOffset+7)
-        const requestEnd = requestUrl.slice(indexOfOffset+9,requestUrl.length+100)
+        const requestEnd = requestUrl.slice(indexOfOffset+9,requestUrl.length+10000000)
+
         const requestEndEdit = requestEnd.split('&').filter((item,index)=>{
             if(index<requestEnd.split('&').length-3)
                 return item
